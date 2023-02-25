@@ -1,16 +1,27 @@
 import React from 'react';
-import Header from './components/Header';
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
+import SearchBar from './components/SearchBar';
 function App() {
+
+  const [selected, setSelected] = React.useState([]);
+  const queryClient = new QueryClient()
+
   return (
-    <>
-    
-    <div className="flex flex-col items-center h-full justify-center min-h-screen py-2">
-    <Header />
-      <div className="w-6/12 rounded-lg bg-sky-300 min-h-full">
-        <p>moi</p>
+    <QueryClientProvider client={queryClient}>
+      <div className="flex flex-col items-center justify-center h-screen py-2 bg-transparent">
+        <div className="w-7/12 h-4/5">
+          <div className="flex flex-col items-center justify-center h-full">
+            <SearchBar setSelected={setSelected}/>
+          </div>
+          <div>
+          </div>
+        </div>
+        <div>
+        </div>
       </div>
-    </div>
-    </>
+      <ReactQueryDevtools initialIsOpen={false}/>
+    </QueryClientProvider>
   )
 }
 
