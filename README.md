@@ -1,2 +1,4 @@
-# Client for showing Nysse timetables and routes and etc.
-This was made for testing react-query and tailwind css
+# Nysse client
+This project is for fetching Tampere area timetables using Nysse open API.
+Used technologies are react-query and Tailwind CSS.
+
